@@ -3,9 +3,16 @@ extends layout
 block content
   body
     .container.wrapper
-      each post in posts
-        .row 
-            .col-md-12
-              .well.well-sm 
-                  p.text-center #{post.title}
+      .row 
+        .col-md-10
+          each post in posts
+            .row 
+                .col-md-12
+                  .well.well-sm 
+                    button.btn.btn-link.text-center 
+                      h4 #{post.title}
+        .col-md-2
+            button.btn
+                h5.text-center Submit
+
     

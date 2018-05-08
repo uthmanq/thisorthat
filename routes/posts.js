@@ -12,18 +12,7 @@ router.get('/posts/view', function (req, res, next) {
 });
 
 router.get('/posts/make', function (req, res, next) {
-    var options = {
-        root: __dirname
-    };
-
-    res.sendFile('makepost.html', options, function (err) {
-        if (err) {
-            console.log(err);
-            res.status(err.status).end();
-        }
-        else {
-        }
-    });
+    res.render('make');
 });
 
 router.post('/posts/post', function (req, res, next) {
