@@ -1,5 +1,7 @@
 extends layout
 block content
+  header
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript")
   body
     form
         .form-group
@@ -16,4 +18,5 @@ block content
             textarea.form-control#sectionBText(rows=6)
         .form-group
             br
-            button.btn.btn-primary(type="submit") Submit
+            button.btn.btn-primary#send(type="submit") Submit
+    script(type="text/javascript" src="/javascripts/make.js")
