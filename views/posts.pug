@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  body
+    .container.wrapper
+      each post in posts
+        .row 
+            .col-md-12
+              .well.well-sm 
+                  p.text-center #{post.title}
+    

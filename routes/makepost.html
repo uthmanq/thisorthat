@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Freezer Alert</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .jumbotron {
+        background-color: #48909f;
+        /* Launchify Blue */
+        color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
+
+    .input {
+        margin-bottom: 10px;
+    }
+</style>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>thisorthat.io</h1>
+        <h2>Posts</h2>
+        <p>Submit a Post</p>
+        <form class="form-inline">
+            <div class="input">
+                <input type="text" id="title" class="form-control" size="59" placeholder="Post Title" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="sectionAText" class="form-control" size="50" placeholder="Your Sample Text A" required>
+                <input type="text" id="sectionBText" class="form-control" size="50" placeholder="Your Sample Text B" required>
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-danger" id="send">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        $("#send").click(function () {
+            var title = $('#title').val();
+            var sectionAText = $('#sectionAText').val();
+            var sectionBText = $('#sectionBText').val();
+            $.post('/posts/post', { "title": title, "sectionAText": sectionAText, "sectionBText": sectionBText }, function () {
+                alert("done successfully");
+            });
+        });
+    </script>
+
+</body>
+<footer class="container-fluid text-center">
+
+    <p>
+        <a href="https://github.com/Ridhwaandev" title="Ridhwaan's GitHub">Ridhwaan's GitHub</a>
+        <br>
+        <a href=https://github.com/UQONYX " title="Uthman 's GitHub">Uthman's Github</a>
+            <br>
+            <a href="https://launchpadlabs.org" title="Visit Launchify">Visit Launchify</a>
+    </p>
+</footer>
+
+</html>
