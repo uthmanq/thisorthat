@@ -4,17 +4,29 @@ block content
   body
     .container-fluid
       .row 
-        .col-md-10
+        .col-md-12
           each post in posts
             .row 
                 .col-md-12
                   .well.well-sm 
-                    button.btn.btn-link.text-center(onclick='viewPost("' +   post._id + '")') 
+                    button.btn.btn-link#postbutton(onclick='viewPost("' +   post._id + '")') 
                       h4 #{post.title}
-        .col-md-2
-          .row
-            a.btn.btn-info(role="button" href="/posts/make")
-                h5.text-center Submit
+                        - var month_names = new Array ( );
+                        - month_names[month_names.length] = "January";
+                        - month_names[month_names.length] = "February";
+                        - month_names[month_names.length] = "March";
+                        - month_names[month_names.length] = "April";
+                        - month_names[month_names.length] = "May";
+                        - month_names[month_names.length] = "June";
+                        - month_names[month_names.length] = "July";
+                        - month_names[month_names.length] = "August";
+                        - month_names[month_names.length] = "September";
+                        - month_names[month_names.length] = "October";
+                        - month_names[month_names.length] = "November";
+                        - month_names[month_names.length] = "December";
+                        - var d = new Date(post.created_at);
+                        - var result = (month_names[d.getMonth()]) + " " + d.getDate() + ", " + d.getFullYear() + " at " + (d.getHours()+1) + ":" + d.getMinutes() ;
+                      h6 Posted on #{result}.
   script(type="text/javascript" src="/javascripts/view.js")
 
       

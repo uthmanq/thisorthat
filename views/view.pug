@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  body
+    script(type="text/javascript" src="/javascripts/view.js")
+    .container-fluid
+        .row
+            .col-md-12
+                h2 #{post.title}
+                - var month_names = new Array ( );
+                - month_names[month_names.length] = "January";
+                - month_names[month_names.length] = "February";
+                - month_names[month_names.length] = "March";
+                - month_names[month_names.length] = "April";
+                - month_names[month_names.length] = "May";
+                - month_names[month_names.length] = "June";
+                - month_names[month_names.length] = "July";
+                - month_names[month_names.length] = "August";
+                - month_names[month_names.length] = "September";
+                - month_names[month_names.length] = "October";
+                - month_names[month_names.length] = "November";
+                - month_names[month_names.length] = "December";
+                - var d = new Date(post.created_at);
+                - var result = (month_names[d.getMonth()]) + " " + d.getDate() + ", " + d.getFullYear() + " at " + (d.getHours()+1) + ":" + d.getMinutes() ;
+                h6 Posted on #{result}.
+        .row
+            .col-md-6
+                .well
+                    p #{post.sectionAText}
+            .col-md-6
+                .well
+                    p #{post.sectionBText}
+
+    
+
