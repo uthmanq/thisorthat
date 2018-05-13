@@ -1,18 +1,18 @@
 extends layout
 
 block content
-  body
-    .container.wrapper
-      .row 
-        .col-md-10
-          each post in posts
-            .row 
-                .col-md-12
-                  .well.well-sm 
-                    button.btn.btn-link.text-center 
-                      h4 #{post.title}
-        .col-md-2
-            a.btn.btn-info(role="button" href="/posts/make")
-                h5.text-center Submit
+  .container-fluid
+    .row 
+      .col-md-10
+        each post in posts
+          .row 
+              .col-md-12
+                .well.well-sm 
+                  button.btn.btn-link.text-center 
+                    h4 #{post.title}
+      .col-md-2
+        .row
+          a.btn.btn-info(role="button" href="/posts/make")
+              h5.text-center Submit
 
     

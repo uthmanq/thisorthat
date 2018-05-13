@@ -6,10 +6,20 @@ html
     block scripts
       link(rel='stylesheet', href='/stylesheets/style.css')
       link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+  .navbar.navbar-inverse
+    .container-fluid
+      .navbar-header
+        .navbar-brand ThisorThat.io
+      ul.nav.navbar-nav.navbar-right
+        li
+          a Post
+        li
+          a Login
   body
     .container-fluid
       .row
-        .col-md-3
+        .col-md-3.well.no-margin.no-padding#newsfeed
+          h3 Newsfeed
         .col-md-9 
           block content
 
